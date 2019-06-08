@@ -6,6 +6,7 @@ import random
 seed = 0
 words_list = []
 
+# Get words that were saved in "".word_list.txt" file. This file must have been created beforehand.
 def get_words_from_file():
     words = []
     file = open(".words_list.txt", "r")
@@ -15,6 +16,7 @@ def get_words_from_file():
     file.close()
     return words
 
+# Add a list of words to the list and save then in ".word_list.txt" file
 def add_words(words):
     file = open(".words_list.txt", "a")
     for word in words:
@@ -25,10 +27,12 @@ def add_words(words):
             file.write(word + "\n")
     file.close()
 
+# Print the list of words
 def print_words():
     for word in words_list:
         print(word)
 
+# Give help
 def print_help():
     print("randomize_words is a script to print a random word in a given list.\n")
     print("Call the script to print the random word")
@@ -38,12 +42,12 @@ def print_help():
     print("\t -seed nb : set the seed to the value nb (0 is default)\n")
     print("\t -clear : empty the list of words")
 
-
+# Retrieve previously inserted words
 words_list = get_words_from_file()
 
 if __name__ == "__main__":
+    # Check for arguments
     if len(sys.argv)>1:
-        #print(sys.argv)
         if sys.argv[1] == "-help":
             print_help()
 
@@ -63,11 +67,14 @@ if __name__ == "__main__":
                 exit()
             seed = int(sys.argv[2])
             print("Seed has been set to: " + str(sys.argv[2]))
+
         elif sys.argv[1] == "-clear":
             open(".words_list.txt", "w+").close()
+
         else:
             print("Invalid argument. Use '-help' to get some help")
 
+    # Output random word
     else:
         if words_list == []:
             print("The list of words is empty. Use '-help' to get come help.")
