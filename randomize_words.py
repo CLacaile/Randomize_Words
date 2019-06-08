@@ -9,7 +9,10 @@ words_list = []
 # Get words that were saved in "".word_list.txt" file. This file must have been created beforehand.
 def get_words_from_file():
     words = []
-    file = open(".words_list.txt", "r")
+    try:
+        file = open(".words_list.txt", "r")
+    except IOError:
+        file = open(".words_list.txt", "w+")
     lines = file.readlines()
     for line in lines:
         words.append(line)
@@ -18,7 +21,7 @@ def get_words_from_file():
 
 # Add a list of words to the list and save then in ".word_list.txt" file
 def add_words(words):
-    file = open(".words_list.txt", "a")
+    file = open(".words_list.txt", "a+")
     for word in words:
         if (word+"\n") in words_list:
             continue
