@@ -43,7 +43,8 @@ def print_help():
     print("\t -add word : add word to the list;\n")
     print("\t -print : print the list of words in the list\n")
     print("\t -seed nb : set the seed to the value nb (0 is default)\n")
-    print("\t -clear : empty the list of words")
+    print("\t -clear : empty the list of words\n")
+    print("\t -len : print the number of words currently in the list\n")
 
 # Retrieve previously inserted words
 words_list = get_words_from_file()
@@ -73,6 +74,9 @@ if __name__ == "__main__":
 
         elif sys.argv[1] == "-clear":
             open(".words_list.txt", "w+").close()
+
+        elif sys.argv[1] == "-len":
+            print("Number of words in list: " + len(words_list))
 
         else:
             print("Invalid argument. Use '-help' to get some help")
