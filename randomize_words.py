@@ -76,7 +76,7 @@ if __name__ == "__main__":
             open(".words_list.txt", "w+").close()
 
         elif sys.argv[1] == "-len":
-            print("Number of words in list: " + len(words_list))
+            print("Number of words in list: " + str(len(words_list)))
 
         else:
             print("Invalid argument. Use '-help' to get some help")
