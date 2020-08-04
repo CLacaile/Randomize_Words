@@ -1,3 +1,6 @@
+# RANDOMIZED WORD TEST
+
+
 #!/usr/bin/python
 
 import sys
