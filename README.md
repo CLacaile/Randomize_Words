@@ -6,6 +6,7 @@ Python script that gives a random word from a list input beforehand.
 I use this script to train my knowledge before an oral exam.
 Call the script without any options to print the random word
 
+
 ## Options:
 
   [-add word1 word2 ... wordN] : add word1 to wordN to the list;
